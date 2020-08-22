@@ -12,12 +12,37 @@
   display: flex;
 }
 
+@media only screen and (max-width: 992px) {
+  .details-page-container .image-container img {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .details-page-container .image-container img {
+    max-width: 150px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .details-page-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .details-page-container .image-container {
+    text-align: center;
+  }
+}
+
 .details-page-container .details-col {
-  padding: 5px 20px;
+  padding: 15px 20px;
 }
 
 .details-page-container .details-col .title {
-  font-size: 32px;
+  font-size: 36px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 

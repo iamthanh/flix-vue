@@ -3,6 +3,12 @@
   flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 992px) {
+  .results-container {
+    flex-direction: column;
+  }
+}
+
 .results-container .movie {
   display: flex;
   max-width: 50%;
@@ -12,13 +18,27 @@
   text-decoration: none;
 }
 
+@media only screen and (max-width: 992px) {
+  .results-container .movie {
+    max-width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .results-container .movie .poster-image img {
+    max-width: 150px;
+  }
+}
+
 .results-container .movie:hover {
   background: #f2f2f2;
   cursor: pointer;
 }
 
 .results-container .movie .right {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .results-container .movie .title {
