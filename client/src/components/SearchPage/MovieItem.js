@@ -10,7 +10,11 @@ export default function MovieItem(props) {
     <a className="movie" href={'/movie/id/' + props.data.id}>
       <div className="left">
           <div className='poster-image'>
-            <img src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+            {props.data.poster_path ? (
+              <img src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+            ) : (
+              <div className='image-not-available'><div className='center-text'>Image not available</div></div>
+            )}
           </div>
         </div>
         <div className="right">

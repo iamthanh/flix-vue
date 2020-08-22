@@ -32,6 +32,30 @@
   }
 }
 
+.results-container .movie .poster-image .image-not-available {
+  width: 199px;
+  height: 299px;
+  background: #f4f4f4;
+  border: 1px solid #e5e5e5;
+  position: relative;
+}
+
+@media only screen and (max-width: 992px) {
+  .results-container .movie .poster-image .image-not-available {
+    width: 150px;
+    height: 225px;
+  }
+}
+
+.results-container .movie .poster-image .image-not-available .center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #848484;
+}
+
 .results-container .movie:hover {
   background: #f8f8f8;
   cursor: pointer;

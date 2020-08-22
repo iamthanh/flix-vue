@@ -4,14 +4,20 @@ import './SearchBar.css';
 export default function SearchBar(props) {
 
   const [searchTerm, setSearchTerm] = useState('');
-  
-  const searchInputHandler = (search) => setSearchTerm(search)
-  const performSearchHandler = () => props.performSearch(searchTerm);
 
+  const searchInputHandler = (search) => setSearchTerm(search)
+  const performSearchHandler = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    props.performSearch(searchTerm)
+  };
+  
   return (
     <div className="search-bar-container">
-      <input type='text' placeholder='Search here' onChange={(e)=>searchInputHandler(e.target.value)} />
-      <button onClick={()=>performSearchHandler()}>Search</button>
+      <form onSubmit={(e) => performSearchHandler(e)}>
+        <input type='text' placeholder='Search here' onChange={(e) => searchInputHandler(e.target.value)} />
+        <button type='submit'>Search</button>
+      </form>
     </div>
   );
 }
