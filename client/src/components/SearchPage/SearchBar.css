@@ -5,10 +5,15 @@
 }
 
 .search-bar-container input {
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 5px;
+  border: 1px solid #f8f8f8;
+  padding: 6px 15px;
+}
+
+.search-bar-container input:focus {
   border: 1px solid #6464de;
-  padding: 5px;
+  outline: none;
 }
 
 .search-bar-container button {
