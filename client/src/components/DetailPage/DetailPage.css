@@ -1,0 +1,22 @@
+.details-page-container {
+  display: flex;
+}
+
+.details-page-container .details-col {
+  padding: 5px 20px;
+}
+
+.details-page-container .details-col .title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.details-page-container .details-col label.detail-label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.details-page-container .details-col .data {
+  margin-left: 7px;
+}
