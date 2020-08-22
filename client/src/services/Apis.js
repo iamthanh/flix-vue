@@ -1,7 +1,7 @@
 const axios = require('axios')
+const apiPath = window.location.protocol + '//' + window.location.hostname + ':5000';
 
 export default {
-
   // Used for caching, fetches data based on key from window.localStorage
   async fetchFromCache(key) {
     if (window.localStorage) {
@@ -19,10 +19,8 @@ export default {
         if (cacheKey) return await cacheData;
       }
 
-      let dataPromise = axios.get('http://api.themoviedb.org/3/movie/popular?api_key=146847dbeaa67f4b1e28159ee410ec30&page=' + page);
-      dataPromise.then((r) =>
-        window.localStorage.setItem(cacheKey, JSON.stringify(r))
-      );
+      let dataPromise = axios.get(apiPath + '/api/movies/top/' + page);
+      dataPromise.then((r) => window.localStorage.setItem(cacheKey, JSON.stringify(r)));
       return await dataPromise;
     } catch (error) {
       console.error(error)
@@ -38,10 +36,8 @@ export default {
         if (cacheKey) return await cacheData;
       }
 
-      let dataPromise = axios.get('http://api.themoviedb.org/3/movie/' + id + '?api_key=146847dbeaa67f4b1e28159ee410ec30');
-      dataPromise.then((r) =>
-        window.localStorage.setItem(cacheKey, JSON.stringify(r))
-      );
+      let dataPromise = axios.get(apiPath + '/api/movie/'+id);
+      dataPromise.then((r) => window.localStorage.setItem(cacheKey, JSON.stringify(r)));
       return await dataPromise;
     } catch (error) {
       console.error(error)
@@ -61,10 +57,8 @@ export default {
         if (cacheKey) return await cacheData;
       }
 
-      let dataPromise = axios.get('http://api.themoviedb.org/3/search/movie/?api_key=146847dbeaa67f4b1e28159ee410ec30' + (searchTerm ? '&query=' + searchTerm : ''));
-      dataPromise.then((r) =>
-        window.localStorage.setItem(cacheKey, JSON.stringify(r))
-      );
+      let dataPromise = axios.get(apiPath + '/api/movies/search/'+searchTerm);
+      dataPromise.then((r) => window.localStorage.setItem(cacheKey, JSON.stringify(r)));
       return await dataPromise;
     } catch (error) {
       console.error(error)
