@@ -7,17 +7,17 @@ export default function MovieItem(props) {
   const parsedDate = new Date(props.data.release_date);
 
   return (
-    <div className="movie">
+    <a className="movie" href={'/movie/id/' + props.data.id}>
       <div className="left">
-        <div className='poster-image'>
-          <img src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+          <div className='poster-image'>
+            <img src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+          </div>
         </div>
-      </div>
-      <div className="right">
-        <div className="released">{monthNames[parsedDate.getMonth()]} {parsedDate.getFullYear()}</div>
-        <div className="title">{props.data.title}</div>  
-        <div className="description">{props.data.overview}</div>
-      </div>
-    </div>
+        <div className="right">
+          <div className="released">{monthNames[parsedDate.getMonth()]} {parsedDate.getFullYear()}</div>
+          <div className="title">{props.data.title}</div>
+          <div className="description">{props.data.overview}</div>
+        </div>
+    </a>
   );
 }

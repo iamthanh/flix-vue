@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SearchBar.css';
 
 export default function SearchBar(props) {
   useEffect(()=>{
