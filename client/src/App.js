@@ -8,7 +8,6 @@ import {
 import './App.css';
 import SearchPage from './components/SearchPage';
 import DetailPage from './components/DetailPage';
-import PersonPage from './components/PersonPage';
 
 function App() {
   return (

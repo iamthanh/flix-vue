@@ -21,9 +21,9 @@ export default function SearchPage() {
     }
   }, []);
 
+  // This function is called when a search request is made
   const performSearch = (searchTerm) => {
     setSearchTerm(searchTerm);
-
     SearchService.search(searchTerm).then((r) => {
       if (r && r.status === 200) {
         setMovies(r.data.results);
