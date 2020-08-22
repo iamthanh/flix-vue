@@ -90,8 +90,13 @@ export default function DetailPage() {
   }
 
   return (
-    <div className="details-page-container">
-      {renderMovieData}
-    </div>
+    <React.Fragment>
+      <div className="back-button">
+        <a href={document.referrer}>{'<'} Back</a>
+      </div>
+      <div className="details-page-container">
+        {renderMovieData}
+      </div>
+    </React.Fragment>
   );
 }

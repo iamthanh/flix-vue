@@ -1,3 +1,13 @@
+.back-button {
+  padding: 20px 0;
+}
+
+.back-button a {
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .details-page-container {
   display: flex;
 }

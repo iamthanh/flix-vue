@@ -1,6 +1,22 @@
+.search-bar-container {
+  padding: 10px 25px;
+  display: flex;
+}
+
 .search-bar-container input {
   font-size: 20px;
-  border-radius: 10px;
-  border: 1px solid #646464;
+  border-radius: 5px;
+  border: 1px solid #6464de;
   padding: 5px;
+}
+
+.search-bar-container button {
+  margin-left: 10px;
+    background: #6464de;
+    border: 1px solid #6464de;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    width: 88px;
+    cursor: pointer;
 }

@@ -6,37 +6,30 @@ import Results from './Results';
 import Filters from './Filters';
 
 export default function SearchPage() {
-  
-  const [fetchedMovies, setFetchedMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
 
+  const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     // Fetch the top movies
-    if (!fetchedMovies.length) {
-      Apis.fetchTopMovies().then(r=>{
+    if (!movies.length) {
+      Apis.fetchTopMovies().then(r => {
         if (r && r.status === 200) {
-          setFetchedMovies(r.data.results);
-          
-          // On init, set filteredMovies to be fetchedMovies, since we want to show all
-          setFilteredMovies(r.data.results);
+          setMovies(r.data.results);
         }
       });
-    }    
+    }
   }, []);
 
-  const filterMovies = () => {
-    // Performs a query for the search term using SearchService 
-    SearchService.query(searchTerm, fetchedMovies).then((r)=>{
-      setFilteredMovies(r);
+  const performSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+
+    SearchService.search(searchTerm).then((r) => {
+      if (r && r.status === 200) {
+        setMovies(r.data.results);
+      }
     })
   }
-
-  useEffect(() => {
-    // This tracks changes to searchTerm, if so, performs the search
-    filterMovies(searchTerm, fetchedMovies);
-  }, [searchTerm])
 
   return (
     <div className="search-page-container">
@@ -44,11 +37,12 @@ export default function SearchPage() {
         <Filters />
       </div>
       <div className="search-results-container">
-        <SearchBar 
-          setSearchTerm={setSearchTerm}
+        <SearchBar
+          performSearch={performSearch}
         />
-        <Results 
-          movies={filteredMovies}
+        <Results
+          searchTerm={searchTerm}
+          movies={movies}
         />
       </div>
     </div>

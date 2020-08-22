@@ -1,5 +1,9 @@
+import Apis from './Apis';
+
 export default {
-  async query(searchTerm, movies) {
+
+  // This searches based on filtering, requests are not made
+  async quickSearch(searchTerm, movies) {
 
     if (!movies) return await [];
     if (!searchTerm) return await movies;
@@ -13,5 +17,10 @@ export default {
       }
     }
     return await results;
+  },
+
+  // This performs a search via api
+  async search(searchTerm) {
+    return Apis.searchMovies(searchTerm);
   }
 }
