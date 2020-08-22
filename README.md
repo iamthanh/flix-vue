@@ -1,6 +1,9 @@
 Welcome to the Flix-vue app, a really simple NodeJs/ReactJs that allows you to see and search the most popular movies.
 Data and apis are provided via The Movie Database API
 
+![Image of search page](https://raw.githubusercontent.com/iamthanh/flix-vue/master/images/main.JPG)
+![Image of detail page](https://raw.githubusercontent.com/iamthanh/flix-vue/master/images/detail.JPG)
+
 The frontend is put together using [Create React App](https://github.com/facebook/create-react-app)
 
 ## Let's get started
