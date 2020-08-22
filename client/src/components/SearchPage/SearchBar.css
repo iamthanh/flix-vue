@@ -1,6 +1,7 @@
 .search-bar-container {
-  padding: 10px 25px;
+  padding: 25px;
   display: flex;
+  background: #f8f8f8;
 }
 
 .search-bar-container input {
