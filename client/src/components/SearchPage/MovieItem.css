@@ -25,6 +25,10 @@
   font-size: 24px;
 }
 
+.results-container .movie .ratings {
+  margin: 10px 0;
+}
+
 .results-container .movie .description {
   color: #707070;
   font-size: 14px;

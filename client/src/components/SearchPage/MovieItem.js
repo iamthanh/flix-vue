@@ -16,6 +16,7 @@ export default function MovieItem(props) {
         <div className="right">
           <div className="released">{monthNames[parsedDate.getMonth()]} {parsedDate.getFullYear()}</div>
           <div className="title">{props.data.title}</div>
+          <div className='ratings'>Ratings <strong>{props.data.vote_average}</strong>/10</div>
           <div className="description">{props.data.overview}</div>
         </div>
     </a>
