@@ -15,18 +15,16 @@ export default function DetailPage() {
         setMovieData(r.data);
       }
     });
-  }, [])
+  }, [movieData, movieId])
 
   let renderMovieData = '';
   if (movieData) {
     const parsedDate = new Date(movieData.release_date);
     renderMovieData = (
       <React.Fragment>
-        {movieData.poster_path ? (
-          <div className="image-container">
-            <img src={'https://image.tmdb.org/t/p/w500' + movieData.poster_path} />
-          </div>
-        ) : ''}
+        <div className="image-container">
+          <img alt={'Poster image for ' + movieData.title} src={'https://image.tmdb.org/t/p/w500' + movieData.poster_path} />
+        </div>
         <div className='details-col'>
           <div className='title'>{movieData.title}</div>
           <div className='ratings'>Ratings <strong>{movieData.vote_average}</strong>/10 from {movieData.vote_count} voters</div>

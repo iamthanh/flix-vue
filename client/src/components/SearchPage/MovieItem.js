@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './MovieItem.css';
 
 export default function MovieItem(props) {
@@ -11,7 +11,7 @@ export default function MovieItem(props) {
       <div className="left">
           <div className='poster-image'>
             {props.data.poster_path ? (
-              <img src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+              <img alt={'Poster image for '+ props.data.title} src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
             ) : (
               <div className='image-not-available'><div className='center-text'>Image not available</div></div>
             )}

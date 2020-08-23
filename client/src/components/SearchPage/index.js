@@ -3,7 +3,6 @@ import Apis from '../../services/Apis';
 import SearchService from '../../services/SearchService';
 import SearchBar from './SearchBar';
 import Results from './Results';
-import Filters from './Filters';
 
 export default function SearchPage() {
 
@@ -19,7 +18,7 @@ export default function SearchPage() {
         }
       });
     }
-  }, []);
+  }, [searchTerm, movies.length]);
 
   // This function is called when a search request is made
   const performSearch = (searchTerm) => {
@@ -33,9 +32,6 @@ export default function SearchPage() {
 
   return (
     <div className="search-page-container">
-      <div className="left-col">
-        <Filters />
-      </div>
       <div className="search-results-container">
         <SearchBar
           performSearch={performSearch}
