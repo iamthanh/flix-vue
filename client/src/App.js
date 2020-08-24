@@ -10,7 +10,7 @@ import DetailPage from './components/DetailPage';
 
 function App() {
   return (
-    <div className='flix-vue'>
+    <div className='movie-finder'>
       <Router>
         <Switch>
           <Route exact path="/" component={SearchPage} />
