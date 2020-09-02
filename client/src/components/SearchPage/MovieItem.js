@@ -9,20 +9,22 @@ export default function MovieItem(props) {
   return (
     <a className="movie" href={'/movie/id/' + props.data.id}>
       <div className="left">
-          <div className='poster-image'>
-            {props.data.poster_path ? (
-              <img alt={'Poster image for '+ props.data.title} src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
-            ) : (
-              <div className='image-not-available'><div className='center-text'>Image not available</div></div>
+        <div className='poster-image'>
+          {props.data.poster_path ? (
+            <img alt={'Poster image for ' + props.data.title} src={'https://image.tmdb.org/t/p/w200' + props.data.poster_path} />
+          ) : (
+              <div className='image-not-available'>
+                <div className='center-text'>Image not available</div>
+              </div>
             )}
-          </div>
         </div>
-        <div className="right">
-          <div className="released">{monthNames[parsedDate.getMonth()]} {parsedDate.getFullYear()}</div>
-          <div className="title">{props.data.title}</div>
-          <div className='ratings'>Ratings <strong>{props.data.vote_average}</strong>/10</div>
-          <div className="description">{props.data.overview}</div>
-        </div>
+      </div>
+      <div className="right">
+        <div className="released">{monthNames[parsedDate.getMonth()]} {parsedDate.getFullYear()}</div>
+        <div className="title">{props.data.title}</div>
+        <div className='ratings'>Ratings <strong>{props.data.vote_average}</strong>/10</div>
+        <div className="description">{props.data.overview}</div>
+      </div>
     </a>
   );
 }

@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchBar.css';
 
 export default function SearchBar(props) {
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [timerRunning, setTimerRunning] = useState(null);
 
-  const searchInputHandler = (search) => setSearchTerm(search)
-  const performSearchHandler = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    props.performSearch(searchTerm)
-  };
+  const searchInputHandler = (search) => {
+    if (timerRunning) 
+
+    setTimeout(()=>{
+      setSearchTerm(search);
+    },2000);
+
+
+    console.log(search);
+  }
+
+  useEffect(()=>{
+    // props.performSearch(searchTerm)
+  }, [searchTerm])
   
   return (
     <div className="search-bar-container">
-      <form onSubmit={(e) => performSearchHandler(e)}>
+      <form>
         <input type='text' placeholder='Search here' onChange={(e) => searchInputHandler(e.target.value)} />
-        <button type='submit'>Search</button>
       </form>
     </div>
   );

@@ -8,6 +8,16 @@ import './App.css';
 import SearchPage from './components/SearchPage';
 import DetailPage from './components/DetailPage';
 
+
+/**
+ * 1) pagination
+ *    buttons to move 
+ *    <   40   > 
+ * 2) Loading message
+ * 3) search on change
+ * 
+ */
+
 function App() {
   return (
     <div className='movie-finder'>
